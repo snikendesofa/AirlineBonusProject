@@ -18,6 +18,8 @@ public class MemberArchiveClient {
     {
         MemberArchive memberArchive = new MemberArchive();
 
+        
+
         memberArchive.listAllMembers();
 
         System.out.println("\nAdd some bonuspoints to all of the members..\n");

@@ -1,3 +1,5 @@
+import static java.lang.Math.round;
+
 public class SilverMemberShip extends Membership
 {
 
@@ -10,6 +12,7 @@ public class SilverMemberShip extends Membership
     @Override
     public int registerBalance(int bonusPointsBalance, int newPoints)
     {
-        return bonusPointsBalance + newPoints;
+        double bonusBoost = 1.2;
+        return bonusPointsBalance + newPoints * (int) (bonusBoost);
     }
 }
