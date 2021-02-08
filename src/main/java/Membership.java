@@ -1,2 +1,4 @@
-public class Membership extends BonusMember {
+public class Membership extends BonusMember
+{
+
 }
