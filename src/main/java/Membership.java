@@ -1,10 +1,9 @@
-import java.time.LocalDate;
-
-public class Membership extends BonusMember
+public class Membership
 {
-    public Membership(String name, String password, String eMailAddress, Membership membership, int memberNumber, LocalDate enrolledDate, int bonusPointsBalance)
+
+    public String getMemberShipName()
     {
-        super(name, password, eMailAddress, membership, memberNumber, enrolledDate, bonusPointsBalance);
+
     }
 
     /**

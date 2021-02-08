@@ -47,7 +47,9 @@ public class MemberArchive {
      */
     public boolean registerPoints(int memberNumber, int bonusPoints) {
         boolean success = false;
-        //TODO: Fill in your solution
+
+
+
         return success;
     }
 
@@ -62,16 +64,13 @@ public class MemberArchive {
     /**
      * Fills the register with some arbitrary members, for testing purposes.
      */
-    private void fillRegisterWithTestdata() {
-        BonusMember member = new BonusMember("Håkon Fossum", "jeglikerhunder123", "haakon-rinor@hotmail.com", );
-        this.members.put(member.getMemberNumber(), member);
-        member = new BonusMember(2, LocalDate.now(), 15000, "Jensen, Jens", "jens@jensen.biz");
-        this.members.put(member.getMemberNumber(), member);
-        member = new BonusMember(3, LocalDate.now(), 5000, "Lie, Linda", "linda@lie.no");
-        this.members.put(member.getMemberNumber(), member);
-        member = new BonusMember(4, LocalDate.now(), 30000, "Paulsen, Paul", "paul@paulsen.org");
-        this.members.put(member.getMemberNumber(), member);
-        member = new BonusMember(5, LocalDate.now(), 75000, "FLo, Finn", "finn.flo@gmail.com");
+    private void fillRegisterWithTestdata()
+    {
+        BasicMemberShip b1 = new BasicMemberShip();
+        GoldMemberShip g1 = new GoldMemberShip();
+        Silver
+
+        BonusMember member = new BonusMember("Håkon Fossum", "jeglikerhunder123", "haakon-rinor@hotmail.com", b1.getMemberShipName(), 111111, LocalDate.now(), 5000);
         this.members.put(member.getMemberNumber(), member);
 
     }
