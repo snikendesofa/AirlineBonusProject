@@ -60,18 +60,19 @@ public class MemberArchive {
         //TODO: Fill in your solution
     }
 
-
     /**
      * Fills the register with some arbitrary members, for testing purposes.
      */
     private void fillRegisterWithTestdata()
     {
-        BasicMemberShip b1 = new BasicMemberShip();
-        GoldMemberShip g1 = new GoldMemberShip();
-        Silver
+        BonusMember member1 = new BonusMember("Håkon Fossum", "haakon@hotmail.com", 111112, LocalDate.now(), 0);
+        this.members.put(member1.getMemberNumber(), member1);
 
-        BonusMember member = new BonusMember("Håkon Fossum", "jeglikerhunder123", "haakon-rinor@hotmail.com", b1.getMemberShipName(), 111111, LocalDate.now(), 5000);
-        this.members.put(member.getMemberNumber(), member);
+        BonusMember member2 = new BonusMember("Theodor Fossum", "theodor@hotmail.com", 111113, LocalDate.now(), 5000);
+        this.members.put(member2.getMemberNumber(), member2);
+
+        BonusMember member3 = new BonusMember("Runar Fossum", "runar@hotmail.com", 111114, LocalDate.now(), 2000);
+        this.members.put(member3.getMemberNumber(), member3);
 
     }
 

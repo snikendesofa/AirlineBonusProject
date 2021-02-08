@@ -1,9 +1,9 @@
 public class SilverMemberShip extends Membership
 {
     @Override
-    public String getMemberShipName() 
+    public String getMemberShipName()
     {
-        String membership = "Gold";
+        String membership = "Silver";
         return membership;
     }
 }
