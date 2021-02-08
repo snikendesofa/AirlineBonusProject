@@ -63,7 +63,7 @@ public class MemberArchive {
      * Fills the register with some arbitrary members, for testing purposes.
      */
     private void fillRegisterWithTestdata() {
-        BonusMember member = new BonusMember(1, LocalDate.now(), 10000, "Olsen, Ole", "ole@olsen.biz");
+        BonusMember member = new BonusMember("Håkon Fossum", "jeglikerhunder123", "haakon-rinor@hotmail.com", );
         this.members.put(member.getMemberNumber(), member);
         member = new BonusMember(2, LocalDate.now(), 15000, "Jensen, Jens", "jens@jensen.biz");
         this.members.put(member.getMemberNumber(), member);

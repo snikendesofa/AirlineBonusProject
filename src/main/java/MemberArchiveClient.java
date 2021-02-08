@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+import java.util.Scanner;
+
 /**
  * A simple client program to test the functionality of the
  * MemberArchive and underlaying classes.
@@ -37,5 +39,25 @@ public class MemberArchiveClient {
         System.out.println("Now lets see the register:\n");
         memberArchive.listAllMembers();
 
+    }
+
+    public int newPointsInput()
+    {
+        Scanner sc = new Scanner(System.in);
+        boolean validInput = false;
+        int inputPoints = 0;
+        System.out.println("Please enter the amount of point to add:");
+        while(!validInput)
+        {
+            try
+            {
+                inputPoints = sc.nextInt();
+                System.out.println("The new point has been added to the members balance.");
+                validInput = true;
+            } catch (Exception e)
+            {
+                System.out.println("You need to enter a number! Try again:");
+            }
+        } return inputPoints;
     }
 }
