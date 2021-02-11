@@ -53,6 +53,7 @@ public class BonusMember
             {
                 g1.registerBalance(getBonusPointsBalance(), newPoints);
             }
+        checkAndSetMemberShip();
     }
 
     public boolean checkPassword(String password, String passwordToCheck)
