@@ -1,6 +1,10 @@
 public abstract class Membership
 {
 
+    /**
+     * This class gets the "name" of the membership, either Basic, Silver or Gold.
+     * @return
+     */
     public abstract String getMemberShipName();
 
     /**
