@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * The member archive holds all the bonus members. The archive provides
@@ -16,7 +17,8 @@ public class MemberArchive {
     /**
      * Creates a new instance of MemberArchive.
      */
-    public MemberArchive() {
+    public MemberArchive()
+    {
         this.members = new HashMap<>();
         this.fillRegisterWithTestdata();
     }
@@ -47,7 +49,7 @@ public class MemberArchive {
      */
     public boolean registerPoints(int memberNumber, int bonusPoints) {
         boolean success = false;
-
+        
 
 
         return success;
