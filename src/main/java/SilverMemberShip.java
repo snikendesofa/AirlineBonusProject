@@ -14,9 +14,9 @@ public class SilverMemberShip extends Membership
     @Override
     public int registerBalance(int bonusPointsBalance, int newPoints)
     {
-        float newPointsFloat = (float) newPoints;
+        float newFloatPoints = (float) newPoints;
 
-        return bonusPointsBalance + Math.round(newPointsFloat*POINTS_SCALING_FACTOR);
+        return bonusPointsBalance + Math.round(newFloatPoints*POINTS_SCALING_FACTOR);
 
     }
 }
