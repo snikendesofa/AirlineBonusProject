@@ -35,6 +35,23 @@ public class BonusMember
 
     }
 
+    public String checkMemberShip()
+    {
+        BasicMemberShip b1 = new BasicMemberShip();
+        SilverMemberShip s1 = new SilverMemberShip();
+        GoldMemberShip g1 = new GoldMemberShip();
+
+        if(bonusPointsBalance >= GOLD_LIMIT)
+        {
+            return g1.getMemberShipName();
+        } else if (bonusPointsBalance >= SILVER_LIMIT)
+        {
+            return s1.getMemberShipName();
+        } else
+        { return b1.getMemberShipName();}
+
+    }
+
     public void registerBonusPoints(int newPoints)
     {
         BasicMemberShip b1 = new BasicMemberShip();

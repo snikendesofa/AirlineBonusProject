@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 /**
  * The member archive holds all the bonus members. The archive provides
@@ -58,9 +59,18 @@ public class MemberArchive {
     /**
      * Lists all members to the console.
      */
-    public void listAllMembers() {
-        //TODO: Fill in your solution
+    public void listAllMembers(Map members)
+    {
+            Iterator it = members.entrySet().iterator();
+
+            while (it.hasNext())
+            {
+                Map.Entry pair = (Map.Entry)it.next();
+                System.out.println("Member name: "+ pair.getValue());
+                System.out.println("Member number: " + pair.getKey());
+            }
     }
+
 
     /**
      * Fills the register with some arbitrary members, for testing purposes.
