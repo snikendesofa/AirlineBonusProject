@@ -22,7 +22,7 @@ public class BonusMember
         checkAndSetMemberShip();
     }
 
-    private void checkAndSetMemberShip()
+    public void checkAndSetMemberShip()
     {
         if(bonusPointsBalance >= GOLD_LIMIT)
         {
@@ -83,7 +83,9 @@ public class BonusMember
 
     public void getInfo()
     {
-        System.out.println("Kuk");
+        System.out.println("#############################");
+        System.out.println("Name: " + getName() + "\n" + "email: " + geteMailAddress());
+        System.out.println("Member number: " + getMemberNumber() + "\n" + "Bonus points: " + getBonusPointsBalance());
     }
 
     public int getMemberNumber() {

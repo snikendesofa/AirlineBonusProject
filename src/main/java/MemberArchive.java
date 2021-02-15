@@ -49,10 +49,39 @@ public class MemberArchive {
      * @return {@code true} if bonuspoints were added successfully,
      *         {@code flase} if not.
      */
-    public boolean registerPoints(int memberNumber, int bonusPoints) {
+    public boolean registerPoints(int memberNumber, int bonusPoints)
+    {
         boolean success = false;
-        
 
+        for (Map.Entry<Integer, BonusMember> entry : members.entrySet())
+        {
+            int key = entry.getKey();
+            BonusMember values = entry.getValue();
+            if(values.getMemberNumber() == memberNumber)
+            {
+                if (values.checkMemberShip().equals("Basic"))
+                {
+                    BasicMemberShip b1 = new BasicMemberShip();
+                    b1.registerBalance(values.getBonusPointsBalance(), bonusPoints);
+                    values.checkAndSetMemberShip();
+                    success = true;
+                }
+                else if(values.checkMemberShip().equals("Silver"))
+                {
+                    SilverMemberShip s1 = new SilverMemberShip();
+                    s1.registerBalance(values.getBonusPointsBalance(), bonusPoints);
+                    values.checkAndSetMemberShip();
+                    success = true;
+                }
+                else
+                    {
+                        GoldMemberShip g1 = new GoldMemberShip();
+                        g1.registerBalance(values.getBonusPointsBalance(), bonusPoints);
+                        values.checkAndSetMemberShip();
+                        success = true;
+                    }
+            }
+        }
 
         return success;
     }
@@ -62,13 +91,11 @@ public class MemberArchive {
      */
     public void listAllMembers()
     {
-        System.out.println("The following list contains every BonusMember:");
-        for (Map.Entry<Integer, BonusMember> entry : members.entrySet()) {
+        for (Map.Entry<Integer, BonusMember> entry : members.entrySet())
+        {
             int key = entry.getKey();
             BonusMember values = entry.getValue();
-            System.out.println("#############################");
-            System.out.println("Name: " + values.getName() + "\n" + "Name: " + values.geteMailAddress());
-            System.out.println("Member number: " + values.getMemberNumber() + "\n" + "Bonus points: " + values.getBonusPointsBalance());
+            values.getInfo();
         }
     }
 
