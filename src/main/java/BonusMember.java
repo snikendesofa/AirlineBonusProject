@@ -81,6 +81,11 @@ public class BonusMember
         } else{return false;}
     }
 
+    public void getInfo()
+    {
+        System.out.println("Kuk");
+    }
+
     public int getMemberNumber() {
         return memberNumber;
     }

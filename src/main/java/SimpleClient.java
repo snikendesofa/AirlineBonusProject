@@ -10,7 +10,7 @@ public class SimpleClient
     {
         MemberArchive archive1 = new MemberArchive();
        SimpleClient client1 = new SimpleClient();
-       archive1.listAllMembers();
+        archive1.listAllMembers();
     }
 
 

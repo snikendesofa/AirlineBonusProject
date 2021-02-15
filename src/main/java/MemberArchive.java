@@ -1,3 +1,4 @@
+import javax.xml.namespace.QName;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -59,16 +60,16 @@ public class MemberArchive {
     /**
      * Lists all members to the console.
      */
-    public void listAllMembers(Map members)
+    public void listAllMembers()
     {
-            Iterator it = members.entrySet().iterator();
-
-            while (it.hasNext())
-            {
-                Map.Entry pair = (Map.Entry)it.next();
-                System.out.println("Member name: "+ pair.getValue());
-                System.out.println("Member number: " + pair.getKey());
-            }
+        System.out.println("The following list contains every BonusMember:");
+        for (Map.Entry<Integer, BonusMember> entry : members.entrySet()) {
+            int key = entry.getKey();
+            BonusMember values = entry.getValue();
+            System.out.println("#############################");
+            System.out.println("Name: " + values.getName() + "\n" + "Name: " + values.geteMailAddress());
+            System.out.println("Member number: " + values.getMemberNumber() + "\n" + "Bonus points: " + values.getBonusPointsBalance());
+        }
     }
 
 
