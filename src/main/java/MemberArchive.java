@@ -49,42 +49,31 @@ public class MemberArchive {
      * @return {@code true} if bonuspoints were added successfully,
      *         {@code flase} if not.
      */
-    public boolean registerPoints(int memberNumber, int bonusPoints)
+    public boolean registerPoints(int memberNumber,int bonusPoints)
     {
         boolean success = false;
 
-        for (Map.Entry<Integer, BonusMember> entry : members.entrySet())
+        BonusMember member = findMember(memberNumber);
+        if(member != null)
         {
-            int key = entry.getKey();
-            BonusMember values = entry.getValue();
-            if(values.getMemberNumber() == memberNumber)
-            {
-                if (values.checkMemberShip().equals("Basic"))
-                {
-                    BasicMemberShip b1 = new BasicMemberShip();
-                    b1.registerBalance(values.getBonusPointsBalance(), bonusPoints);
-                    values.checkAndSetMemberShip();
-                    success = true;
-                }
-                else if(values.checkMemberShip().equals("Silver"))
-                {
-                    SilverMemberShip s1 = new SilverMemberShip();
-                    s1.registerBalance(values.getBonusPointsBalance(), bonusPoints);
-                    values.checkAndSetMemberShip();
-                    success = true;
-                }
-                else
-                    {
-                        GoldMemberShip g1 = new GoldMemberShip();
-                        g1.registerBalance(values.getBonusPointsBalance(), bonusPoints);
-                        values.checkAndSetMemberShip();
-                        success = true;
-                    }
-            }
+            member.registerBonusPoints(bonusPoints);
+            success = true;
         }
 
         return success;
     }
+
+    public BonusMember findMember(int memberNumber)
+    {
+        try
+        {
+            return this.members.get(memberNumber);
+        } catch (Exception e)
+        {
+            return null;
+        }
+    }
+
 
     /**
      * Lists all members to the console.
@@ -108,10 +97,10 @@ public class MemberArchive {
         BonusMember member1 = new BonusMember("Håkon Fossum", "haakon@hotmail.com", 111112, LocalDate.now(), 0);
         this.members.put(member1.getMemberNumber(), member1);
 
-        BonusMember member2 = new BonusMember("Theodor Fossum", "theodor@hotmail.com", 111113, LocalDate.now(), 5000);
+        BonusMember member2 = new BonusMember("Theodor Fossum", "theodor@hotmail.com", 111113, LocalDate.now(), 30000);
         this.members.put(member2.getMemberNumber(), member2);
 
-        BonusMember member3 = new BonusMember("Runar Fossum", "runar@hotmail.com", 111114, LocalDate.now(), 2000);
+        BonusMember member3 = new BonusMember("Runar Fossum", "runar@hotmail.com", 111114, LocalDate.now(), 96000);
         this.members.put(member3.getMemberNumber(), member3);
 
     }

@@ -52,7 +52,11 @@ public class BonusMember
 
     }
 
-    public void registerBonusPoints(int newPoints)
+    public void setBonusPointsBalance(int bonusPointsBalance) {
+        this.bonusPointsBalance = bonusPointsBalance;
+    }
+
+    public void registerBonusPoints(int bonusPoints)
     {
         BasicMemberShip b1 = new BasicMemberShip();
         SilverMemberShip s1 = new SilverMemberShip();
@@ -60,15 +64,15 @@ public class BonusMember
 
         if(getBonusPointsBalance() < 25000)
         {
-            b1.registerBalance(getBonusPointsBalance(), newPoints);
+            setBonusPointsBalance(b1.registerBalance(getBonusPointsBalance(),bonusPoints));
         }
         else if (getBonusPointsBalance() > 25000 && getBonusPointsBalance() < 75000)
         {
-            s1.registerBalance(getBonusPointsBalance(), newPoints);
+            setBonusPointsBalance(s1.registerBalance(getBonusPointsBalance(),bonusPoints));
         }
         else
             {
-                g1.registerBalance(getBonusPointsBalance(), newPoints);
+                setBonusPointsBalance(g1.registerBalance(getBonusPointsBalance(),bonusPoints));
             }
         checkAndSetMemberShip();
     }
@@ -86,6 +90,18 @@ public class BonusMember
         System.out.println("#############################");
         System.out.println("Name: " + getName() + "\n" + "email: " + geteMailAddress());
         System.out.println("Member number: " + getMemberNumber() + "\n" + "Bonus points: " + getBonusPointsBalance());
+        if(getBonusPointsBalance() < 25000)
+        {
+            System.out.println("Membership: Basic");
+        }
+        if(getBonusPointsBalance() > 25000 && getBonusPointsBalance() < 75000)
+        {
+            System.out.println("Membership: Silver");
+        }
+        if (getBonusPointsBalance() > 75000)
+            {
+                System.out.println("Membership: Gold");
+            }
     }
 
     public int getMemberNumber() {
