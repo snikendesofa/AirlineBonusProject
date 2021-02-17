@@ -35,7 +35,15 @@ public class MemberArchive {
      */
     public boolean addMember(BonusMember bonusMember) {
         boolean success = false;
-        //TODO: Fill in your solution
+        try
+        {
+            members.put(bonusMember.getMemberNumber(), bonusMember);
+            success = true;
+        }
+        catch (Exception e)
+        {
+            return success;
+        }
         return success;
     }
 
@@ -72,6 +80,25 @@ public class MemberArchive {
         {
             return null;
         }
+    }
+
+    public void infoOnMember(int memberNumber)
+    {
+        BonusMember member = findMember(memberNumber);
+        if(member != null)
+        {
+            member.getInfo();
+        }
+    }
+
+    public boolean findPoints(int memberNumber)
+    {
+        BonusMember member = findMember(memberNumber);
+        if(member != null)
+        {
+            return true;
+        }
+        else{return false;}
     }
 
 
